@@ -86,7 +86,7 @@ if (isset($_SERVER['REQUEST_METHOD'])) {
 }
 ```
 
-5. Once we have the Organisation available in the Session, we need to use it efficiently, so we'll add it to the main Controllers constructor. 'App/Http/Controllers/Controller.php'
+Once we have the Organisation available in the Session, we need to use it efficiently, so we'll add it to the main Controllers constructor. 'App/Http/Controllers/Controller.php'
 
 ```sh
 <?php
@@ -125,3 +125,7 @@ public function index()
     return view('organisations.' . $this->organisation->theme_folder . '.public.pinapples.index', compact('pinapples'));
 }
 ```
+
+# The DevOps Challenge
+
+When an Organisation signs up, i need to add there Vhost file so that Apache can resolve the domain to our public directory. I plan to use <a href="https://laravel.com/docs/5.2/envoy">Envoy Task Runner</a> to run these commands. 
